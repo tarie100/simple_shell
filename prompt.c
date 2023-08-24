@@ -1,5 +1,9 @@
 #include"shell.h"
 #define BUFFER_SIZE 1024
+/**
+ * our_getline -
+ * Return: ..
+ */
 char *our_getline(void)
 {
 	static char buf[BUFFER_SIZE];
@@ -47,9 +51,8 @@ int main(int argc, char **argv)
 	char *ptr;
 	ssize_t charreader;
 	size_t a = 0;
-	char *ptrcpy = NULL;
 	const char *delim = " \n";
-	char *token,*args[] = {"ls", "-l", "cd", "exit", NULL};
+	char *token, char *ptrcpy = NULL, *args[] = {"ls", "-l", "cd", "exit", NULL};
 	int i, tokens = 0;
 
 	(void)argc;
@@ -62,12 +65,6 @@ int main(int argc, char **argv)
 			printf("Error reading input\n");
 			return (-1);
 		}
-		/**
-		 * if (ptr == NULL)
-                {
-		printf("error reading input\n");
-		break;
-		}*/
 		ptrcpy = malloc(sizeof(char) * strlen(ptr));
 		if (ptrcpy == NULL)
 		{
@@ -92,7 +89,6 @@ int main(int argc, char **argv)
 		}
 		argv[i] = NULL;
 		cmd_exec(argv);
-		handle_cmd(args);
 		printf("%s\n", ptr);
 	}
 	handle_cmd(args);
