@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 	size_t a = 0;
 	char *ptrcpy = NULL;
 	const char *delim = " \n";
-	char *token;
+	char *token,*args[] = {"ls", "-l", "cd", "exit", NULL};
 	int i, tokens = 0;
 
 	(void)argc;
@@ -94,6 +94,8 @@ int main(int argc, char **argv)
 		cmd_exec(argv);
 		printf("%s\n", ptr);
 	}
+	handle_cmd(args);
+	launcher(args);
 	free(ptr);
 	free(ptrcpy);
 	return (0);
