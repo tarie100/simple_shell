@@ -1,1 +1,1 @@
-simple_shell project by tarie
+simple_shell project by tarie & eunice

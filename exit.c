@@ -1,9 +1,8 @@
 #include"shell.h"
 /**
  * exit_shell - exits the shell
- * @status: exit status
  */
-void exit_shell(int status)
+void exit_shell(void)
 {
-	exit(status);
+	exit(0);
 }
